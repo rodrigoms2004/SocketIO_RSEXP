@@ -1,0 +1,9 @@
+// instalando o express generator
+npm i -g express-generator
+
+// criando api rest automaticamente
+express -e --git socketio-2
+
+// Instalando socket.io
+npm i socket.io --save
+
