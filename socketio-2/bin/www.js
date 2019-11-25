@@ -19,7 +19,27 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+const server = http.createServer(app);
+
+let io = require('socket.io')(server);
+
+io = io.of('/rocketseat');
+
+io.on(`connection`, (socket) => {
+  console.log(`conectado`)
+
+  socket.on('mensagem', (msg) => {
+    console.log(msg)
+    io.emit(`mensagem`, msg);
+  })
+
+  socket.on(`disconnect`, () => {
+    console.log(`usuário saiu`);
+  })
+  
+})
+
+
 
 /**
  * Listen on provided port, on all network interfaces.

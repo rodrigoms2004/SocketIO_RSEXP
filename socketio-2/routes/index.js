@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/chat2', (req, res, next) => {
-  res.render('chat2', { title: 'chat2'});
+  res.render('chat2', { title: 'Socket.IO chat'});
 })
 
 
